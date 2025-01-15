@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "type": "module",
+  "name": "@internal/srv-bar",
+  "version": "1.0.0",
+  "files": [
+    "dist/*",
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc --build --pretty"
+  },
+  "dependencies": {
+    "@internal/pkg-foo": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.6",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "@opentelemetry/api": "1.9.0"
+  }
+}

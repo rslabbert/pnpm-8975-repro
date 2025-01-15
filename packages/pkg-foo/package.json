@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "type": "module",
+  "name": "@internal/pkg-foo",
+  "description": "",
+  "version": "1.0.0",
+  "exports": {
+    "./*.js": {
+      "import": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
+  "files": ["dist/*", "dist/**/*"],
+  "scripts": {
+    "build": "tsc --build --pretty"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "@opentelemetry/api": "1.7.0"
+  }
+}
