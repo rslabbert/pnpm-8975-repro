@@ -12,8 +12,8 @@ importers:
   packages/pkg-foo:
     dependencies:
       '@opentelemetry/api':
-        specifier: 1.7.0
-        version: 1.7.0
+        specifier: 1.9.0
+        version: 1.9.0
     devDependencies:
       typescript:
         specifier: ^5.7.2
@@ -23,7 +23,7 @@ importers:
     dependencies:
       '@internal/pkg-foo':
         specifier: workspace:*
-        version: file:packages/pkg-foo(@opentelemetry/api@1.9.0)
+        version: link:../pkg-foo
       '@opentelemetry/api':
         specifier: 1.9.0
         version: 1.9.0
@@ -39,7 +39,7 @@ importers:
     dependencies:
       '@internal/pkg-foo':
         specifier: workspace:*
-        version: file:packages/pkg-foo(@opentelemetry/api@1.9.0)
+        version: link:../pkg-foo
       '@opentelemetry/api':
         specifier: 1.9.0
         version: 1.9.0
@@ -52,15 +52,6 @@ importers:
         version: 5.7.3
 
 packages:
-
-  '@internal/pkg-foo@file:packages/pkg-foo':
-    resolution: {directory: packages/pkg-foo, type: directory}
-    peerDependencies:
-      '@opentelemetry/api': 1.7.0
-
-  '@opentelemetry/api@1.7.0':
-    resolution: {integrity: sha512-AdY5wvN0P2vXBi3b29hxZgSFvdhdxPB9+f0B6s//P9Q8nibRWeA3cHm8UmLpio9ABigkVHJ5NMPk+Mz8VCCyrw==}
-    engines: {node: '>=8.0.0'}
 
   '@opentelemetry/api@1.9.0':
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
@@ -78,12 +69,6 @@ packages:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
 snapshots:
-
-  '@internal/pkg-foo@file:packages/pkg-foo(@opentelemetry/api@1.9.0)':
-    dependencies:
-      '@opentelemetry/api': 1.9.0
-
-  '@opentelemetry/api@1.7.0': {}
 
   '@opentelemetry/api@1.9.0': {}
 
